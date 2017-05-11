@@ -18,10 +18,15 @@
              type="text"
              data-bind="textInput: searchText"></input>
     </section>
-    <section class="metasyntactic" data-bind="foreach: repeat(20)">
+    <section class="metasyntactic" data-bind="foreach: filteredItems">
       <ul class="metasyntactic__list">
-        <li class="metasyntactic__item" data-bind="text: $root.generateMetasyntacticText()"></li>
+        <li
+           class="metasyntactic__item"
+           data-bind="text: text"></li>
       </ul>
+    </section>
+    <section class="empty-state" data-bind="visible: filteredItems().length === 0">
+      No element matches your search =(
     </section>
     <footer>
     </footer>
