@@ -1,5 +1,20 @@
 ~function () {
 
+//////////////////////////// SEARCH BAR STYLE /////////////////////////
+
+  $('.searchbar--sticky').sticky({
+    topSpacing: 100,
+    getWidthFrom: '.searchbar--sticky',
+  })
+
+  const searchBarOpacity = ko.observable(0)
+
+  $(window).scroll(() => {
+    searchBarOpacity(Math.min($(window).scrollTop() / 200, 1))
+  })
+
+//////////////////////////// GENERATE CONTENT /////////////////////////
+
   function generateMetasyntacticText () {
     var words = 'eum et optio porro consequatur quia ullam nulla ipsa voluptatem ullam qui consectetur nobis corporis eius numquam sunt consequatur et iusto consequuntur consectetur quasi nisi blanditiis et minima eos qui quisquam iure quia excepturi dignissimos explicabo'.split(' ')
 
@@ -15,6 +30,8 @@
   function repeat (n, a) {
     return Array.apply(undefined, Array(n)).map(() => a)
   }
+
+//////////////////////////// HIGHLIGHT SEARCH /////////////////////////
 
   const highlight = text => {
     if (text.length < 2) return
@@ -37,9 +54,12 @@
   searchText.subscribe(unhighlight)
   searchText.subscribe(highlight)
 
+//////////////////////////// BIND TEMPLATE /////////////////////////
+
   ko.applyBindings({
     generateMetasyntacticText,
     repeat,
     searchText,
+    searchBarOpacity,
   })
 }()

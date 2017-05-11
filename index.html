@@ -8,15 +8,20 @@
   </head>
   <body>
     <header>
+      <h1>Available products<h2>
     </header>
-    <section class="searchbar">
+    <section
+            class="searchbar searchbar--sticky"
+            data-bind="style: { opacity: searchBarOpacity }">
       <input
              class="searchbar__input"
              type="text"
              data-bind="textInput: searchText"></input>
     </section>
     <section class="metasyntactic" data-bind="foreach: repeat(20)">
-      <p data-bind="text: $root.generateMetasyntacticText()"></p>
+      <ul class="metasyntactic__list">
+        <li class="metasyntactic__item" data-bind="text: $root.generateMetasyntacticText()"></li>
+      </ul>
     </section>
     <footer>
     </footer>
@@ -24,6 +29,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://rawgit.com/mburakerman/hrjs/master/src/hr.js"></script>
+    <script src="lib/jquery.sticky.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
