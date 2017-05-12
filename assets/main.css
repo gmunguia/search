@@ -53,6 +53,10 @@
   font-family: FontAwesome;
 }
 
+.searchbar__input::-webkit-input-placeholder {
+  color: white;
+}
+
 .searchbar__icon {
   font-size: 2em;
   color: white;
