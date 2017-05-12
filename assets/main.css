@@ -54,6 +54,8 @@
 
 .metasyntactic {
   column-count: 2;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .metasyntactic--margin {
@@ -66,4 +68,6 @@
 
 .metasyntactic__item {
   display: inline-block;
+  line-height: 1.5em;
+  margin-top: 2em;
 }
