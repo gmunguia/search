@@ -1,0 +1,24 @@
+{
+  "name": "search",
+  "version": "1.0.0",
+  "description": "Real time search example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmunguia/search.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmunguia/search/issues"
+  },
+  "homepage": "https://github.com/gmunguia/search#readme",
+  "dependencies": {
+    "connect": "^3.6.1",
+    "serve-static": "^1.12.2"
+  }
+}
