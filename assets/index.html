@@ -10,14 +10,21 @@
     <header class="header">
       <h1>Find your product</h1>
     </header>
+    <section class="scroll-cue">
+      <span class="scroll-cue__text">Scroll down to begin searching</span>
+      <i class="scroll-cue_icon fa fa-arrow-down fa-2x"></i>
+    </section>
     <section
             class="searchbar searchbar--sticky"
             data-bind="style: { opacity: searchBarOpacity }">
       <input
              class="searchbar__input"
              type="text"
-             data-bind="textInput: searchText"></input>
-      <i class="fa fa-search searchbar__icon" aria-hidden="true"></i>
+             placeholder="&#xF002; type to find what you want faster"
+             data-bind="
+                 textInput: searchText,
+                 css: { empty: searchText().length === 0 }
+               "></input>
     </section>
     <section class="metasyntactic metasyntactic--margin" data-bind="foreach: filteredItems">
       <ul class="metasyntactic__list">

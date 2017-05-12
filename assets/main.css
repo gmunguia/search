@@ -5,6 +5,14 @@
   width: 100%;
 }
 
+.scroll-cue {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  text-align: right;
+  width: 5em;
+}
+
 .searchbar {
   background: #146EB4;
   height: 20%;
@@ -39,6 +47,10 @@
   outline: none;
   position: relative;
   width: 50%;
+}
+
+.searchbar__input.empty {
+  font-family: FontAwesome;
 }
 
 .searchbar__icon {
