@@ -12,7 +12,8 @@ const isTyping = ko.observable(false)
 
 // Update observables as they change.
 $(window).scroll(() => { scrollTop($(window).scrollTop()) })
-$('.searchbar__input').blur(() => { isTyping($('.searchbar__input').is(':focus')) })
+$('.searchbar__input').blur(() => { isTyping(false) })
+$('.searchbar__input').focus(() => { isTyping(true) })
 
 const searchBarOpacity = ko.pureComputed(() => {
   const _scrollTop = scrollTop(),
