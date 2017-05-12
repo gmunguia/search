@@ -3,7 +3,7 @@
 //////////////////////////// SEARCH BAR STYLE /////////////////////////
 
 $('.searchbar--sticky').sticky({
-  topSpacing: 100,
+  topSpacing: 0,
   getWidthFrom: '.searchbar--sticky',
 })
 
@@ -29,7 +29,7 @@ const highlight = text => {
 
   new HR('li.metasyntactic__item', {
     highlight: [searchText()],
-    backgroundColor: '#B4FFEB',
+    backgroundColor: '#FF9900',
   }).hr()
 }
 
@@ -66,12 +66,8 @@ function repeat (n, a) {
 }
 
 const items = repeat(25).map(() => ({ text: generateMetasyntacticText() }))
-const filteredItems = ko.pureComputed(function () {
-  const result = items
-    .filter(item => item.text.indexOf(searchText()) !== -1)
-  console.log(result)
-  return result
-})
+const filteredItems = ko.pureComputed(() => items
+  .filter(item => item.text.indexOf(searchText()) !== -1))
 
 //////////////////////////// BIND TEMPLATE /////////////////////////
 

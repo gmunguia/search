@@ -1,11 +1,63 @@
-.searchbar {
+.header {
   position: absolute;
-  left: 45%;
-  width: 10%;
+  text-align: center;
+  top: 10%;
+  width: 100%;
+}
+
+.searchbar {
+  background: #146EB4;
+  height: 20%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.searchbar:after {
+  background: inherit;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 100%;
+  z-index: -1;
+}
+
+.searchbar__input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 2em;
+  margin-left: 25%;
+  margin-top: 6%;
+  position: relative;
+  width: 50%;
+}
+
+.searchbar__icon {
+  font-size: 2em;
+  color: white;
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 2em;
+  color: white;
+  animation: 1s blink step-end infinite;
 }
 
 .metasyntactic {
   column-count: 2;
+}
+
+.metasyntactic--margin {
+  margin-top: 10%;
 }
 
 .metasyntactic__list {
