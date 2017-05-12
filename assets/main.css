@@ -49,6 +49,10 @@
   width: 50%;
 }
 
+.searchbar__input.empty {
+  font-family: FontAwesome;
+}
+
 .searchbar__icon {
   font-size: 2em;
   color: white;

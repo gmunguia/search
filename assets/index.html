@@ -20,8 +20,11 @@
       <input
              class="searchbar__input"
              type="text"
-             data-bind="textInput: searchText"></input>
-      <i class="fa fa-search searchbar__icon" aria-hidden="true"></i>
+             placeholder="&#xF002; type to find what you want faster"
+             data-bind="
+                 textInput: searchText,
+                 css: { empty: searchText().length === 0 }
+               "></input>
     </section>
     <section class="metasyntactic metasyntactic--margin" data-bind="foreach: filteredItems">
       <ul class="metasyntactic__list">
